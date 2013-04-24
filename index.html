@@ -4,6 +4,7 @@
     <title>Contact Example</title>
 
     <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
+    <script type="text/javascript" charset="utf-8" src="jquery-1.9.1.min.js"></script>
     <script type="text/javascript" charset="utf-8">
 
     // Wait for Cordova to load
@@ -12,6 +13,12 @@
 
     // Cordova is ready
     //
+    $(function(){
+   $('#btn').click(function(){ 
+     insert();
+   });
+});
+    
     function onDeviceReady() {
     insert();
       
@@ -23,18 +30,19 @@ contact.nickname = "jyoti";       //specify both to support all devices
 
 // populate some fields
 var name = new ContactName();
-name.givenName = "Jyoti";
-name.familyName = "lima";
+name.givenName = document.getElementById('name').value;
+//name.familyName = "lima";
 contact.name = name;
-      
+  var email=document.getElementById('email').value; 
+  var contact_no=document.getElementById('phn').value; 
         var phoneNumbers = [];
-        phoneNumbers[0] = new ContactField('work', '212-555-1234', false);
-        phoneNumbers[1] = new ContactField('mobile', '917-555-5432', true); // preferred number
-        phoneNumbers[2] = new ContactField('home', '203-555-7890', false);
+       // phoneNumbers[0] = new ContactField('work', '212-555-1234', false);
+        phoneNumbers[1] = new ContactField('mobile', contact_no, true); // preferred number
+       // phoneNumbers[2] = new ContactField('home', '203-555-7890', false);
         contact.phoneNumbers = phoneNumbers;
         
         var emailId = []
-       emailId[0]= new ContactField('emails',"jps.1391@gmail.com",true);
+       emailId[0]= new ContactField('emails',email,true);
        // emailId.givenId = "jps.1391@gmail.com";
         contact.emails = emailId;
 
