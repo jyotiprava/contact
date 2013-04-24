@@ -17,6 +17,7 @@
         var myContact = navigator.contacts.create({"displayName": "Test User"});
         myContact.note = "This contact has a note.";
         console.log("The contact, " + myContact.displayName + ", note: " + myContact.note);
+       document.getElementById('add').innerHTML="The contact, " + myContact.displayName + ", note: " + myContact.note;
       }
     }
 
@@ -26,5 +27,6 @@
   <body>
     <h1>Example</h1>
     <p onclick="cre();">Create Contact</p>
+    <div id="add"></div>
   </body>
 </html>
