@@ -22,6 +22,7 @@ contact.nickname = "Plumber";       //specify both to support all devices
 var name = new ContactName();
 name.givenName = "Jane";
 name.familyName = "Doe";
+name.phoneNumbers="2222222222";
 contact.name = name;
        contact.save(onSaveSuccess,onSaveError);
       
@@ -40,7 +41,7 @@ contact.name = name;
   </head>
   <body>
     <h1>Example</h1>
-    <p onclick="cre();">Create Contact</p>
+    <a href="find.html"><p>find Contact</p></a>
     <div id="add"></div>
   </body>
 </html>
