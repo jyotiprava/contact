@@ -13,15 +13,14 @@
 
     // Cordova is ready
     //
-    $(function(){
-   $('#btn').click(function(){ 
-     insert();
-   });
-});
+   
     
     function onDeviceReady() {
     //insert();
-      
+       $('#btn').click(function(){ 
+         alert(9);
+     insert();
+   });
     }
      function insert(){
        var contact = navigator.contacts.create();
