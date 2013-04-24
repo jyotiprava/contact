@@ -13,9 +13,11 @@
     // Cordova is ready
     //
     function onDeviceReady() {
+      function cre(){
         var myContact = navigator.contacts.create({"displayName": "Test User"});
         myContact.note = "This contact has a note.";
         console.log("The contact, " + myContact.displayName + ", note: " + myContact.note);
+      }
     }
 
 
@@ -23,6 +25,6 @@
   </head>
   <body>
     <h1>Example</h1>
-    <p>Create Contact</p>
+    <p onclick="cre();">Create Contact</p>
   </body>
 </html>
