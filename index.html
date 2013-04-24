@@ -15,20 +15,24 @@
     function onDeviceReady() {
      
        var contact = navigator.contacts.create();
-contact.displayName = "Plumber";
-contact.nickname = "Plumber";       //specify both to support all devices
+contact.displayName = "jyoti";
+contact.nickname = "jyoti";       //specify both to support all devices
 
 // populate some fields
 var name = new ContactName();
 name.givenName = "Jyoti";
 name.familyName = "lima";
 contact.name = name;
-      // contact.save();
+      
         var phoneNumbers = [];
         phoneNumbers[0] = new ContactField('work', '212-555-1234', false);
         phoneNumbers[1] = new ContactField('mobile', '917-555-5432', true); // preferred number
         phoneNumbers[2] = new ContactField('home', '203-555-7890', false);
         contact.phoneNumbers = phoneNumbers;
+        
+        var emailId = new ContactField();
+        emailId.givenId = "jps.1391@gmail.com";
+        contact.emailId = emailId;
 
         // save the contact
         contact.save(onSaveSuccess,onSaveError);
@@ -36,7 +40,7 @@ contact.name = name;
         // search contacts, returning display name and phone numbers
         var options = new ContactFindOptions();
         options.filter="";
-        filter = ["displayName","phoneNumbers"];
+        filter = ["displayName","phoneNumbers","emailId"];
        
       
     }
