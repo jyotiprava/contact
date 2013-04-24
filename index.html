@@ -20,11 +20,24 @@ contact.nickname = "Plumber";       //specify both to support all devices
 
 // populate some fields
 var name = new ContactName();
-name.givenName = "Jane";
-name.familyName = "Doe";
-name.phoneNumbers="2222222222";
+name.givenName = "Jyoti";
+name.familyName = "lima";
 contact.name = name;
-       contact.save(onSaveSuccess,onSaveError);
+      // contact.save();
+        var phoneNumbers = [];
+        phoneNumbers[0] = new ContactField('work', '212-555-1234', false);
+        phoneNumbers[1] = new ContactField('mobile', '917-555-5432', true); // preferred number
+        phoneNumbers[2] = new ContactField('home', '203-555-7890', false);
+        contact.phoneNumbers = phoneNumbers;
+
+        // save the contact
+        contact.save(onSaveSuccess,onSaveError);
+
+        // search contacts, returning display name and phone numbers
+        var options = new ContactFindOptions();
+        options.filter="";
+        filter = ["displayName","phoneNumbers"];
+       
       
     }
   function onSaveSuccess(contact) {
