@@ -39,13 +39,13 @@
             for (var j=0; j<contacts[i].phoneNumbers.length; j++) {
                 var ph="Type: " + contacts[i].phoneNumbers[j].type + "\n" + 
                     "Value: "  + contacts[i].phoneNumbers[j].value + "\n" + 
-                    "Preferred: "  + contacts[i].phoneNumbers[j].pref);
+                    "Preferred: "  + contacts[i].phoneNumbers[j].pref;
             }
             if(contacts[i].emails != null)  // Checking if not null
-            for (var j=0; j<contacts[i].phoneNumbers.length; j++) {
+            for (var j=0; j<contacts[i].emails.length; j++) {
                 var em="Type: " + contacts[i].emails[j].type + "\n" + 
                     "Value: "  + contacts[i].emails[j].value + "\n" + 
-                    "Preferred: "  + contacts[i].emails[j].pref);
+                    "Preferred: "  + contacts[i].emails[j].pref;
             }
            //alert(lis);
             lis=lis+contacts[i].displayName+'&nbsp;'+ph+'&nbsp;'+em+'<br />';
