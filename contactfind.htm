@@ -14,11 +14,12 @@
     //
     function onDeviceReady() {
         // specify contact search criteria
+         var fname=document.getElementById('name').value;
         var options = new ContactFindOptions();
-        options.filter="jyoti";          // empty search string returns all contacts
+        options.filter=fname;          // empty search string returns all contacts
         options.multiple=true;      // return multiple results
         filter = ["displayName","phoneNumbers","emails"];   // return contact.displayName field
-
+       
         // find contacts
         navigator.contacts.find(filter, onSuccess, onError, options);
     }
@@ -66,5 +67,15 @@
     <h1>Example</h1>
     <p>Find Contacts</p>
     <div id="list"></div>
+      <table>
+        <tr>
+          <td>
+            Enter name
+          </td>
+          <td>
+            <input type="text" id="name" name="ename"/>
+          </td>
+        </tr>
+      </table>
   </body>
 </html>
