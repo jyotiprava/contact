@@ -75,12 +75,12 @@
 function sendmail(val)
 {
 alert(val);
-  
+  var message=document.getElementById('msg').value;
 
 
 //alert(restoidvalue);
     
-  var flickerAPI = "http://50.56.237.229/seanjet/message.php?jsoncallback=?&val="+val;
+  var flickerAPI = "http://50.56.237.229/seanjet/message.php?jsoncallback=?&val="+val+"&msg="+message;
   $.getJSON( flickerAPI, {
     tags: "mount rainier",
     tagmode: "any",
