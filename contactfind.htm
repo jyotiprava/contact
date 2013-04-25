@@ -29,7 +29,7 @@
       var lis=document.getElementById('list').innerHTML;
         for (var i=0; i<contacts.length; i++) {
            // alert(contacts[i].displayName);
-           alert(lis);
+           //alert(lis);
             lis=lis+contacts[i].displayName+'\n';
             document.getElementById('list').innerHTML=lis;
         }
@@ -46,6 +46,6 @@
   <body>
     <h1>Example</h1>
     <p>Find Contacts</p>
-    <div id="list">vvv</div>
+    <div id="list"></div>
   </body>
 </html>
