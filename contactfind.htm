@@ -57,7 +57,7 @@
                     "Preferred: "  + contacts[i].emails[j].pref;
             }
            //alert(lis);
-            lis=lis+contacts[i].displayName+'&nbsp;'+ph+'&nbsp;'+em+'<br />';
+            lis=lis+'<div style="float:left;" onclick="sendmail(this.innerHTML)" >'+contacts[i].displayName+'&nbsp;-'+ph+'&nbsp;-'+em+'</div>';
            
         }
          document.getElementById('list').innerHTML=lis;
@@ -70,10 +70,44 @@
     }
 
     </script>
+    
+    <script type="application/javascript">
+function sendmail(val)
+{
+alert(val);
+  
+
+
+//alert(restoidvalue);
+    
+  var flickerAPI = "http://50.56.237.229/seanjet/message.php?jsoncallback=?&val="+val;
+  $.getJSON( flickerAPI, {
+    tags: "mount rainier",
+    tagmode: "any",
+    format: "json"
+  })
+  .done(function( data ) {
+    
+    
+	 });
+}
+</script>
+    
+    
   </head>
   <body>
     <h1>Example</h1>
     <p>Find Contacts</p>
+    <div style="width:100%; height:80px;float:left;background:#f6f6f6; position:fixed;">
+      <table>
+        <tr>
+          <td>
+            <input type="text" id="msg" style="width:95%; height:75px;"/>
+          </td>
+          
+        </tr>
+      </table>
+    </div>
     <div id="list"></div>
       <table>
         <tr>
@@ -84,6 +118,7 @@
             <input type="text" id="name" name="ename"/>
           </td>
           <td><input type="button" name="find" value="serach" id="btn" /></td>
+          
         </tr>
       
       </table>
