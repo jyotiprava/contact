@@ -28,7 +28,11 @@
     function onSuccess(contacts) {
       var lis=document.getElementById('list').innerHTML;
         for (var i=0; i<contacts.length; i++) {
-            alert(contacts[i].phoneNumbers);
+          for(i in contacts)
+          {
+            alert(i);
+          }
+            //alert(contacts[i].phoneNumbers);
            // alert(contacts[i].phoneNumbers[0]);
            //alert(lis);
             lis=lis+contacts[i].displayName+'&nbsp;'+'<br />';
