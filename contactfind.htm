@@ -4,6 +4,7 @@
     <title>Contact Example</title>
 
     <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
+    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
     <script type="text/javascript" charset="utf-8">
 
     // Wait for Cordova to load
@@ -13,19 +14,26 @@
     // Cordova is ready
     //
     function onDeviceReady() {
+        $('#btn').click(function(){ 
+        getcontact();
+         });
         // specify contact search criteria
-         var fname=document.getElementById('name').value;
-        var options = new ContactFindOptions();
-        options.filter=fname;          // empty search string returns all contacts
-        options.multiple=true;      // return multiple results
-        filter = ["displayName","phoneNumbers","emails"];   // return contact.displayName field
-       
-        // find contacts
-        navigator.contacts.find(filter, onSuccess, onError, options);
+        
     }
 
     // onSuccess: Get a snapshot of the current contacts
     //
+    function getcontact()
+    {
+       var fname=document.getElementById('name').value;
+        var options = new ContactFindOptions();
+        options.filter=fname;          // empty search string returns all contacts
+        options.multiple=true;      // return multiple results
+        filter = ["displayName","phoneNumbers","emails"];   // return contact.displayName field
+     
+        // find contacts
+        navigator.contacts.find(filter, onSuccess, onError, options);
+    }
     function onSuccess(contacts) {
       var lis=document.getElementById('list').innerHTML;
         for (var i=0; i<contacts.length; i++) {
@@ -75,6 +83,7 @@
           <td>
             <input type="text" id="name" name="ename"/>
           </td>
+          <td><input type="button" name="find" value="serach" id="btn" /></td>
         </tr>
       
       </table>
