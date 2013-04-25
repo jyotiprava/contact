@@ -33,7 +33,12 @@
             //        number = contacts[i].phoneNumbers[j].value;
             //        alert(number);
              //   }
-           alert(contacts[i].phoneNumbers);
+             if(!contacts[i].phoneNumbers)
+             {
+           alert(contacts[i].phoneNumbers[0].value);
+             }
+             else
+             alert(contacts[i].phoneNumbers);
            //alert(lis);
             //lis=lis+contacts[i].displayName+'&nbsp;'+contacts[i].phoneNumbers[0].value+'&nbsp;<br />';
            
