@@ -29,10 +29,10 @@
       var lis=document.getElementById('list').innerHTML;
         for (var i=0; i<contacts.length; i++) {
          
-            alert(contacts[i].phoneNumbers);
+            alert(contacts[i].phoneNumbers.value);
            
            //alert(lis);
-            lis=lis+contacts[i].displayName+'&nbsp;'+contacts[i].phoneNumbers.mobile
+            lis=lis+contacts[i].displayName+'&nbsp;'+contacts[i].phoneNumbers.value
 + '&nbsp;<br />';
            
         }
