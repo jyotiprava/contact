@@ -17,7 +17,7 @@
         var options = new ContactFindOptions();
         options.filter="jyoti";          // empty search string returns all contacts
         options.multiple=true;      // return multiple results
-        filter = ["displayName"];   // return contact.displayName field
+        filter = ["displayName","phoneNumbers","emails"];   // return contact.displayName field
 
         // find contacts
         navigator.contacts.find(filter, onSuccess, onError, options);
@@ -28,14 +28,14 @@
     function onSuccess(contacts) {
       var lis=document.getElementById('list').innerHTML;
         for (var i=0; i<contacts.length; i++) {
-          for(i in contacts)
-          {
-            alert(i);
-          }
+         // for(i in contacts)
+         // {
+          //  alert(i);
+         // }
             //alert(contacts[i].phoneNumbers);
            // alert(contacts[i].phoneNumbers[0]);
            //alert(lis);
-            lis=lis+contacts[i].displayName+'&nbsp;'+'<br />';
+            lis=lis+contacts[i].displayName+'&nbsp;'+phoneNumbers+ '&nbsp;'+emails+'<br />';
             document.getElementById('list').innerHTML=lis;
         }
     };
