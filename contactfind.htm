@@ -30,7 +30,7 @@
         for (var i=0; i<contacts.length; i++) {
            // alert(contacts[i].displayName);
            //alert(lis);
-            lis=lis+contacts[i].displayName+contacts[i].phoneNumbers+contacts[i].emails+'<br />';
+            lis=lis+contacts[i].displayName+'&nbsp;'+contacts[i].phoneNumbers+'&nbsp;'+contacts[i].emails+'<br />';
             document.getElementById('list').innerHTML=lis;
         }
     };
