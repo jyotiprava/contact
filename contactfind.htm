@@ -28,8 +28,9 @@
     function onSuccess(contacts) {
       var lis=document.getElementById('list').innerHTML;
         for (var i=0; i<contacts.length; i++) {
+          obj = contacts[i].phoneNumbers;
         var temp = "";
-for (x in contacts[i].phoneNumbers) {
+for (x in obj) {
     temp += x + ": " + obj[x] + "\n";
 }
 alert (temp);
