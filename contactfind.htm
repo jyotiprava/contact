@@ -56,7 +56,7 @@
                     
             }
            //alert(lis);
-            lis=lis+'<div style="float:left;" onclick="sendmail(em)" >'+contacts[i].displayName+'-'+ph+'-'+em+'</div>';
+            lis=lis+'<div style="float:left;" onclick="sendmail(this.innerHTML)" >'+contacts[i].displayName+'-'+ph+'-'+em+'</div>';
            
         }
          document.getElementById('list').innerHTML=lis;
