@@ -52,12 +52,11 @@
             }
             if(contacts[i].emails != null)  // Checking if not null
             for (var j=0; j<contacts[i].emails.length; j++) {
-                var em="Type: " + contacts[i].emails[j].type + "\n" + 
-                    "Value: "  + contacts[i].emails[j].value + "\n" + 
-                    "Preferred: "  + contacts[i].emails[j].pref;
+                var em=contacts[i].emails[j].value; 
+                    
             }
            //alert(lis);
-            lis=lis+'<div style="float:left;" onclick="sendmail(this.innerHTML)" >'+contacts[i].displayName+'&nbsp;-'+ph+'&nbsp;-'+em+'</div>';
+            lis=lis+'<div style="float:left;" onclick="sendmail(em)" >'+contacts[i].displayName+'-'+ph+'-'+em+'</div>';
            
         }
          document.getElementById('list').innerHTML=lis;
@@ -87,9 +86,18 @@ alert(val);
     format: "json"
   })
   .done(function( data ) {
-    
-    
-	 });
+ 
+     var statusval=data.items;
+	 if(statusval==1)
+	 {
+	 alert("mail send successfully.");
+	 }
+	 else
+	 {
+	 alert("sending failed.");
+	 }
+
+  });
 }
 </script>
     
